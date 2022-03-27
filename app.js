@@ -17,6 +17,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(router);
+
+app.use('/home', (req, res)=>{
+    res.sendFile(path.join(__dirname+'/src/html/index.html'));
+})
 app.use('/', (req, res) => {
 
     res.send('<h1>This is the microservice v1.0.0</h1>');
