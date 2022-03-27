@@ -1,6 +1,6 @@
 const router = require('express').Router();
 router.route('/').get((req, res)=>{
-    msg = `Hello ${req.query.name || "world"} from get request!`;
+    msg = `Hello ${req.query.name || "world"} from <b>get</b> request!`;
     res.json({msg});
 });
 
@@ -23,7 +23,7 @@ router.route('/:lang').get((req, res)=>{
 
 router.route('/').post((req, res)=>{
  
-    msg = `Hello ${req.body.name || "world"} from post request!`;
+    msg = `Hello, ${req.body.name || "world"} from post request!`;
     res.json({msg});
 })
 router.route('/add').post((req, res)=>{
